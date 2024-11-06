@@ -1,0 +1,83 @@
+/* Reset styles for consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body and background styling */
+body {
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+}
+
+/* Main container */
+.container {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+/* Logo and title styling */
+.logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #b0b0b0;
+}
+
+/* Button styling */
+.nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background-color: #6b8e23;
+    transform: scale(1.05);
+}
+
+/* Specific colors for each button */
+.card-search {
+    background-color: #3b82f6; /* Blue */
+}
+
+.deck-builder {
+    background-color: #f97316; /* Orange */
+}
+
+.settings {
+    background-color: #14b8a6; /* Teal */
+}
+
+/* Footer styling */
+.footer {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #b0b0b0;
+}

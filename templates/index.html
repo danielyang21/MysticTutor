@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MysticTutor – Magic: The Gathering Card Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo">MysticTutor</div>
+        <div class="tagline">Discover Your Perfect Deck</div>
+
+        <div class="nav-buttons">
+            <button class="button card-search" onclick="navigateTo('card-search.html')">Find Cards</button>
+            <button class="button deck-builder" onclick="navigateTo('deck-builder.html')">Build a Deck</button>
+            <button class="button settings" onclick="navigateTo('settings.html')">Customize Your Experience</button>
+        </div>
+
+        <div class="footer">A Magic: The Gathering Resource</div>
+    </div>
+
+    <script>
+        // JavaScript to handle button navigation
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+
+</body>
+</html>
