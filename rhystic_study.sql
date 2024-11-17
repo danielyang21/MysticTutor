@@ -319,6 +319,12 @@ INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("black", "Underground 
 INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("blue", "Underground Sea");
 
 
+INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("white", "Plains");
+INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("blue", "Island");
+INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("black", "Swamp");
+INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("red", "Mountain");
+INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("green", "Forest");
+
 
 
 DROP TABLE IF EXISTS CARD_KEYWORDS;
@@ -329,6 +335,62 @@ CREATE TABLE CARD_KEYWORDS (
     FOREIGN KEY (card_name) REFERENCES CARD_SETS (card_name)
 );
 
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("banding", "Benalish Hero");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("banding", "Mesa Pegasus");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Mesa Pegasus");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Serra Angel");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("vigilance", "Serra Angel");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("banding", "Mesa Pegasus");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("defender", "Wall of Swords");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Wall of Swords");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("first strike", "White Knight");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("protection from black", "White Knight");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Air Elemental");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Phantasmal Forces");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Phantom Monster");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("defender", "Wall of Air");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Wall of Air");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("defender", "Wall of Water");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("first strike", "Black Knight");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("protection from white", "Black Knight");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("swampwalk", "Bog Wraith");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Hypnotic Specter");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Lord of the Pit");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("trample", "Lord of the Pit");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Hypnotic Specter");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("haste", "Nether Shadow");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Nightmare");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Sengir Vampire");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("defender", "Wall of Bone");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Will-o'-the-Wisp");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("swampwalk", "Zombie Master");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("swampwalk", "Zombie Master");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("mountainwalk", "Burrowing");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Dragon Whelp");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("mountainwalk", "Goblin King");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Granite Gargoyle");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Roc of Kher Ridges");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Shivan Dragon");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("trample", "Two-Headed Giant of Foriys");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("defender", "Wall of Fire");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("defender", "Wall of Stone");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Birds of Paradise");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Cockatrice");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("first strike", "Elvish Archers");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("reach", "Giant Spider");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "Scyb Sprites");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("forestwalk", "Shanodin Dryads");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("banding", "Timber Wolves");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("defender", "Wall of Brambles");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("defender", "Wall of Ice");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("trample", "War Mammoth");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("reach", "Web");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("banding", "Helm of Chatzuk");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "The Hive");
+INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ("flying", "The Hive");
+
+
+
 DROP TABLE IF EXISTS CARD_SUBTYPES;
 CREATE TABLE CARD_SUBTYPES (
     subtype_name TEXT NOT NULL,
@@ -336,6 +398,196 @@ CREATE TABLE CARD_SUBTYPES (
     PRIMARY KEY (subtype_name, card_name),
     FOREIGN KEY (card_name) REFERENCES CARD_SETS (card_name)
 );
+
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Animate Wall");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("human", "Benalish Hero");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("soldier", "Benalish Hero");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Black Ward");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Blessing");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Blessing");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Blue Ward");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Consecrate Land");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Farmstead");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Farmstead");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Green Ward");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Holy Armor");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Holy Strength");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Lance");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("pegasus", "Mesa Pegasus");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("human", "Northern Paladin");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("knight", "Northern Paladin");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("unicorn", "Pearled Unicorn");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("avatar", "Personal Incarnation");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("incarnation", "Personal Incarnation");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Red Ward");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("human", "Samite Healer");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("cleric", "Samite Healer");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("cat", "Savanah Lions");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("angel", "Serra Angel");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("human", "Veteran Bodyguard");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("wall", "Wall of Swords");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("human", "White Knight");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("knight", "White Knight");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "White Ward");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("elemental", "Air Elemental");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Animate Artifact");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("shapeshifter", "Clone");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Control Magic");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Creature Bond");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Feedback");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Flight");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Invisibility");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("merfolk", "Lord of Atlantis");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("djinn", "Mahamoti Djinn");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("merfolk", "Merfolk of the Pearl Trident");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("illusion", "Phantasmal Forces");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Phantasmal Terrain");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("illusion", "Phantom Monster");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("human", "Pirate Ship");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("pirate", "Pirate Ship");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Power Leak");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("human", "Prodigal Sorcerer");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("wizard", "Prodigal Sorcerer");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Psychic Venom");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("serpent", "Sea Serpent");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Steal Artifact");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("shapeshifter", "Vesuvan Doppelganger");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("wall", "Wall of Air");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("wall", "Wall of Water");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("elemental", "Water Elemental");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Animate Dead");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("human", "Black Knight");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("knight", "Black Knight");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("wraith", "Bog Wraith");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Cursed Land");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("demon", "Demonic Hordes");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("skeleton", "Drudge Skeletons");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Evil Presence");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Fear");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("shade", "Frozen Shade");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("specter", "Hypnotic Specter");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("demon", "Lord of the Pit");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("spirit", "Nether Shadow");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("imp", "Nettling Imp");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("nightmare", "Nightmare");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("horse", "Nightmare");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Paralyze");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("rat", "Plague Rats");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("human", "Royal Assassin");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("assassin", "Royal Assassin");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("zombie", "Scathe Zombies");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("zombie", "Scavenging Ghoul");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("vampire", "Sengir Vampire");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Unholy Strength");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("skeleton", "Wall of Bone");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("wall", "Wall of Bone");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Warp Artifact");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Weakness");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("spirit", "Will-o'-the-Wisp");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("zombie", "Zombie Master");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Burrowing");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("dragon", "Dragon Whelp");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("dwarf", "Dwarven Demolition Team");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("dwarf", "Dwarven Warriors");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("warrior", "Dwarven Warriors");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("elemental", "Earth Elemental");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Earthbind");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("elemental", "Fire Elemental");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Firebreathing");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("goblin", "Goblin Balloon Brigade");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("warrior", "Goblin Balloon Brigade");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("goblin", "Goblin King");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("gargoyle", "Granite Gargoyle");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("ogre", "Gray Ogre");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("giant", "Hill Giant");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("minotaur", "Hurloon Minotaur");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("orc", "Ironclaw Orcs");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("human", "Keldon Warlord");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("barbarian", "Keldon Warlord");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("orc", "Orcish Artillery");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("warrior", "Orcish Artillery");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("bird", "Roc of Kher Ridges");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("hydra", "Rock Hydra");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("troll", "Sedge Troll");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("dragon", "Shivan Dragon");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("giant", "Stone Giant");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("giant", "Two-Headed Giant of Foriys");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("troll", "Uthden Troll");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("wall", "Wall of Fire");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("wall", "Wall of Stone");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Aspect of Wolf");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("bird", "Birds of Paradise");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("cockatrice", "Cockatrice");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("wurm", "Craw Wurm");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("elf", "Elvish Archers");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("archer", "Elvish Archers");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("elemental", "Force of Nature");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("fungus", "Fungusaur");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("dinosaur", "Fungusaur");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("avatar", "Gaea's Liege");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("spider", "Giant Spider");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("bear", "Grizzly Bears");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Instill Energy");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("treefolk", "Ironroot Treefolk");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Kudzu");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("human", "Ley Druid");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("druid", "Ley Druid");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Living Artifact");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("elf", "Llanowar Elves");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("druid", "Llanowar Elves");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Lure");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Regeneration");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("faerie", "Scryb Sprites");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("nymph", "Shanodin Dryads");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("dryad", "Shanodin Dryads");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("basilisk", "Thicket Basilisk");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("wolf", "Timber Wolves");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("human", "Verduran Enchantress");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("druid", "Verduran Enchantress");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("plant", "Wall of Brambles");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("wall", "Wall of Brambles");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("wall", "Wall of Ice");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("wall", "Wall of Wood");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Wanderlust");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("elephant", "War Mammoth");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Web");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("aura", "Wild Growth");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("beast", "Clockwork Beast");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("juggernaut", "Juggernaut");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("wall", "Living Wall");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("golem", "Obsianus Golem");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("golem", "Obsianus Golem");
+
+--Dual Lands
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("swamp", "Badlands");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("mountain", "Badlands");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("swamp", "Bayou");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("forest", "Bayou");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("mountain", "Plateau");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("plains", "Plateau");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("forest", "Savannah");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("plains", "Savannah");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("swamp", "Scrubland");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("plains", "Scrubland");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("mountain", "Taiga");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("forest", "Taiga");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("island", "Tropical Island");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("forest", "Tropical Island");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("plains", "Tundra");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("forest", "Tundra");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("island", "Underground Sea");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("swamp", "Underground Sea");
+
+
+--Lands
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("plains", "Plains");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("island", "Island");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("swamp", "Swamp");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("mountain", "Mountain");
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("forest", "Forest");
+
+
+
 
 DROP TABLE IF EXISTS CARD_TYPES;
 CREATE TABLE CARD_TYPES (
