@@ -96,15 +96,15 @@
       <h2>Filters</h2>
       <form>
         <label>
-          <input type="checkbox" name="filter1">
+          <input type="checkbox" id = "filter1" name="filter1">
           Filter 1
         </label><br>
         <label>
-          <input type="checkbox" name="filter2">
+          <input type="checkbox" id = "filter2" name="filter2">
           Filter 2
         </label><br>
         <label>
-          <input type="checkbox" name="filter3">
+          <input type="checkbox" id = "filter3" name="filter3">
           Filter 3
         </label>
       </form>
@@ -121,30 +121,149 @@
     
       <!-- Card Display -->
     <div class="card-grid">
-        <div class="card">
+        <div class="card" id = "lea-1-animate-wall"> 
             <img src="{{ url_for('static', filename='card-urls/lea-1-animate-wall.jpg') }}" alt="Animate Wall">
         </div>
-        <div class="card">
+        <div class="card" id = "lea-2-armageddon">
             <img src="{{ url_for('static', filename='card-urls/lea-2-armageddon.jpg') }}" alt="Armageddon">
         </div>
-        <div class="card">
+        <div class="card" id = "lea-3-balance">
             <img src="{{ url_for('static', filename='card-urls/lea-3-balance.jpg') }}" alt="Balance">
         </div>
-        <div class="card">
+        <div class="card" id = "lea-4-benalish-hero">
             <img src="{{ url_for('static', filename='card-urls/lea-4-benalish-hero.jpg') }}" alt="Benalish Hero">
         </div>
-        <div class="card">
+        <div class="card" id = "lea-5-black-ward">
             <img src="{{ url_for('static', filename='card-urls/lea-5-black-ward.jpg') }}" alt="Black Ward">
         </div>
-        <div class="card">
+        <div class="card" id = "lea-6-blaze-of-glory">
             <img src="{{ url_for('static', filename='card-urls/lea-6-blaze-of-glory.jpg') }}" alt="Blaze of Glory">
         </div>
-        <div class="card">
+        <div class="card" id = "lea-7-blessing">
             <img src="{{ url_for('static', filename='card-urls/lea-7-blessing.jpg') }}" alt="Blessing">
         </div>
-
+        <div class="card" id = "lea-8-blue-ward">
+            <img src="{{ url_for('static', filename='card-urls/lea-8-blue-ward.jpg') }}" alt="Blue Ward">
+        </div>
+        <div class="card" id = "lea-9-castle">
+            <img src="{{ url_for('static', filename='card-urls/lea-9-castle.jpg') }}" alt="Castle">
+        </div>
+        <div class="card" id = "lea-10-circle-of-protection-blue">
+            <img src="{{ url_for('static', filename='card-urls/lea-10-circle-of-protection-blue.jpg') }}" alt="Circle of Protection: Blue">
+        </div>
+        <div class="card" id = "lea-11-circle-of-protection-green">
+            <img src="{{ url_for('static', filename='card-urls/lea-11-circle-of-protection-green.jpg') }}" alt="Circle of Protection: Green">
+        </div>
+        <div class="card" id = "lea-12-circle-of-protection-red">
+            <img src="{{ url_for('static', filename='card-urls/lea-12-circle-of-protection-red.jpg') }}" alt="Circle of Protection: Red">
+        </div>
+        <div class="card" id = "lea-13-circle-of-protection-white">
+            <img src="{{ url_for('static', filename='card-urls/lea-13-circle-of-protection-white.jpg') }}" alt="Circle of Protection: White">
+        </div>
+        <div class="card" id = "lea-14-consecrate-land">
+            <img src="{{ url_for('static', filename='card-urls/lea-14-consecrate-land.jpg') }}" alt="Consecrate Land">
+        </div>
+        <div class="card" id = "lea-15-conversion">
+            <img src="{{ url_for('static', filename='card-urls/lea-15-conversion.jpg') }}" alt="Conversion">
+        </div>
+        <div class="card" id = "lea-16-crusade">
+            <img src="{{ url_for('static', filename='card-urls/lea-16-crusade.jpg') }}" alt="Crusade">
+        </div>
+        <div class="card" id = "lea-17-death-ward">
+            <img src="{{ url_for('static', filename='card-urls/lea-17-death-ward.jpg') }}" alt="Death Ward">
+        </div>
+        <div class="card" id = "lea-18-disenchant">
+            <img src="{{ url_for('static', filename='card-urls/lea-18-disenchant.jpg') }}" alt="Disenchant">
+        </div>
+        <div class="card" id = "lea-19-farmstead">
+            <img src="{{ url_for('static', filename='card-urls/lea-19-farmstead.jpg') }}" alt="Farmstead">
+        </div>
+        <div class="card" id = "lea-20-green-ward">
+            <img src="{{ url_for('static', filename='card-urls/lea-20-green-ward.jpg') }}" alt="Green Ward">
+        </div>
+        <div class="card" id = "lea-21-guardian-angel">
+            <img src="{{ url_for('static', filename='card-urls/lea-21-guardian-angel.jpg') }}" alt="Guardian Angel">
+        </div>
+        <div class="card" id = "lea-22-healing-slave">
+            <img src="{{ url_for('static', filename='card-urls/lea-22-healing-slave.jpg') }}" alt="Healing Slave">
+        </div>
+        <div class="card" id = "lea-23-holy-armor">
+            <img src="{{ url_for('static', filename='card-urls/lea-23-holy-armor.jpg') }}" alt="Holy Armor">
+        </div>
+        <div class="card" id = "lea-24-holy-strength">
+            <img src="{{ url_for('static', filename='card-urls/lea-24-holy-strength.jpg') }}" alt="Holy Strength">
+        </div>
+        <div class="card" id = "lea-25-island-sanctuary">
+            <img src="{{ url_for('static', filename='card-urls/lea-25-island-sanctuary.jpg') }}" alt="Island Sanctuary">
+        </div>
+        <div class="card" id = "lea-26-karma">
+            <img src="{{ url_for('static', filename='card-urls/lea-26-karma.jpg') }}" alt="Karma">
+        </div>
+        <div class="card" id = "lea-27-lance">
+            <img src="{{ url_for('static', filename='card-urls/lea-27-lance.jpg') }}" alt="Lance">
+        </div>
+        <div class="card" id = "lea-28-mesa-pegasus">
+            <img src="{{ url_for('static', filename='card-urls/lea-28-mesa-pegasus.jpg') }}" alt="Mesa Pegasus">
+        </div>
+        <div class="card" id = "lea-29-northern-paladin">
+            <img src="{{ url_for('static', filename='card-urls/lea-29-northern-paladin.jpg') }}" alt="Northern Paladin">
+        </div>
+        <div class="card" id = "lea-30-pearled-unicorn">
+            <img src="{{ url_for('static', filename='card-urls/lea-30-pearled-unicorn.jpg') }}" alt="Pearled Unicorn">
+        </div>
+        <div class="card" id = "lea-31-personal-incarnation">
+            <img src="{{ url_for('static', filename='card-urls/lea-31-personal-incarnation.jpg') }}" alt="Personal Incarnation">
+        </div>
+        <div class="card" id = "lea-32-purelace">
+            <img src="{{ url_for('static', filename='card-urls/lea-32-purelace.jpg') }}" alt="Purelace">
+        </div>
+        <div class="card" id = "lea-33-red-ward">
+            <img src="{{ url_for('static', filename='card-urls/lea-33-red-ward.jpg') }}" alt="Red Ward">
+        </div>
+        <div class="card" id = "lea-34-resurrection">
+            <img src="{{ url_for('static', filename='card-urls/lea-34-resurrection.jpg') }}" alt="Resurrection">
+        </div>
+        <div class="card" id = "lea-35-reverse-damage">
+            <img src="{{ url_for('static', filename='card-urls/lea-35-reverse-damage.jpg') }}" alt="Reverse Damage">
+        </div>
+        <div class="card" id = "lea-36-righteousness">
+            <img src="{{ url_for('static', filename='card-urls/lea-36-righteousness.jpg') }}" alt="Righteousness">
+        </div>
+        <div class="card" id = "lea-37-samite-healer">
+            <img src="{{ url_for('static', filename='card-urls/lea-37-samite-healer.jpg') }}" alt="Samite Healder">
+        </div>
+        <div class="card" id = "lea-38-savannah-lions">
+            <img src="{{ url_for('static', filename='card-urls/lea-38-savannah-lions.jpg') }}" alt="Savannah Lions">
+        </div>
+        <div class="card" id = "lea-39-serra-angel">
+            <img src="{{ url_for('static', filename='card-urls/lea-39-serra-angel.jpg') }}" alt="Serra Angel">
+        </div>
+        <div class="card" id = "lea-40-swords-to-plowshares">
+            <img src="{{ url_for('static', filename='card-urls/lea-40-swords-to-plowshares.jpg') }}" alt="Swords to Plowshares">
+        </div>
     </div>
   
   </div>
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const filter1Checkbox = document.getElementById('filter1');
+      const animateWallCard = document.getElementById('lea-1-animate-wall');
+  
+      filter1Checkbox.addEventListener('change', function () {
+        if (filter1Checkbox.checked) {
+          animateWallCard.style.display = 'none'; // Hide the card
+        } else {
+          animateWallCard.style.display = ''; // Show the card
+        }
+      });
+    });
+  </script>
+
+
+
+
 </body>
 </html>
