@@ -15,7 +15,6 @@ INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("white", "Balance");
 INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("white", "Benalish Hero");
 INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("white", "Black Ward");
 INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("white", "Blaze of Glory");
-INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("white", "Armageddon");
 INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("white", "Blessing");
 INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("white", "Blue Ward");
 INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("white", "Castle");
@@ -203,6 +202,7 @@ INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("green", "Camouflage")
 INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("green", "Channel");
 INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("green", "Cockatrice");
 INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("green", "Craw Wurm");
+INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("green", "Elvish Archers");
 INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("green", "Fastbond");
 INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("green", "Fog");
 INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ("green", "Force of Nature");
@@ -591,11 +591,319 @@ INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ("forest", "Forest");
 
 DROP TABLE IF EXISTS CARD_TYPES;
 CREATE TABLE CARD_TYPES (
-    types_name TEXT NOT NULL,
+    type_name TEXT NOT NULL,
     card_name TEXT NOT NULL,
-    PRIMARY KEY (types_name, card_name),
+    PRIMARY KEY (type_name, card_name),
     FOREIGN KEY (card_name) REFERENCES CARD_SETS (card_name)
 );
+
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Animate Wall");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Armageddon");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Balance");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Benalish Hero");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Black Ward");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Blaze of Glory");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Blessing");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Blue Ward");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Castle");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Circle of Protection: Blue");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Circle of Protection: Green");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Circle of Protection: Red");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Circle of Protection: White");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Consecrate Land");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Conversion");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Crusade");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Death Ward");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Disenchant");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Farmstead");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Green Ward");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Guardian Angel");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Healing Salve");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Holy Armor");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Holy Strength");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Island Sanctuary");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Karma");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Lance");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Mesa Pegasus");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Northern Paladin");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Pearled Unicorn");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Personal Incarnation");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Purelace");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Red Ward");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Resurrection");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Reverse Damage");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Righteousness");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Samite Healer");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Savannah Lions");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Serra Angel");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Swords to Plowshares");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Veteran Bodyguard");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Wall of Swords");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "White Knight");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "White Ward");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Wrath of God");
+
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Air Elemental");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Ancestral Recall");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Animate Artifact");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Blue Elemental Blast");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Braingeyser");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Clone");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Control Magic");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Copy Artifact");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Counterspell");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Creature Bond");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Drain Power");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Feedback");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Flight");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Invisibility");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Jump");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Lifetap");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Lord of Atlantis");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Magical Hack");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Mahamoti Djinn");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Mana Short");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Merfolk of the Pearl Trident");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Phantasmal Forces");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Phantasmal Terrain");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Phantom Monster");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Pirate Ship");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Power Leak");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Power Sink");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Prodigal Sorcerer");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Psionic Blast");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Psychic Venom");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Sea Serpent");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Siren's Call");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Sleight of Mind");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Spell Blast");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Statis");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Steal Artifact");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Thoughtlace");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Time Walk");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Timetwister");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Twiddle");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Unsummon");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Vesuvan Doppelganger");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Volcanic Eruption");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Wall of Air");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Water Elemental");
+
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Animate Dead");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Bad Moon");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Black Knight");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Bog Wraith");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Contract from Below");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Cursed Land");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Dark Ritual");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Darkpact");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Deathgrip");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Deathlace");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Demonic Attorney");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Demonic Hordes");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Demonic Tutor");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Drain Life");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Drudge Skeletons");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Evil Presence");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Fear");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Frozen Shade");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Gloom");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Howl from Beyond");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Hypnotic Specter");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Lich");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Lord of the Pit");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Mind Twist");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Nether Shadow");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Nettling Imp");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Nightmare");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Paralyze");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Pestilence");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Plague Rats");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Raise Dead");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Royal Assassin");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Sacrifice");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Scathe Zombies");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Scavenging Ghoul");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Sengir Vampire");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Simulacrum");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Sinkhole");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Terror");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Unholy Strength");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Wall of Bone");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Warp Artifact");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Weakness");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Will-o'-the-Wisp");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Word of Command");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Zombie Master");
+
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Burrowing");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Chaoslace");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Disintegrate");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Dragon Whelp");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Dwarven Demolition Team");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Dwarven Warriors");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Earth Elemental");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Earthbind");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Earthquake");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "False Orders");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Fire Elemental");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Fireball");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Firebreathing");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Flashfires");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Fork");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Goblin Balloon Brigade");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Goblin King");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Granite Gargoyle");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Gray Ogre");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Hill Giant");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Hurloon Minotaur");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Ironclaw Orcs");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Keldon Warlord");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Lightning Bolt");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Mana Flare");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Manabarbs");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Mons's Goblin Raiders");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Orcish Artillery");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Orcish Oriflamme");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Power Surge");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Raging River");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Red Elemental Blast");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Roc of Kher Ridges");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Rock Hydra");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Sedge Troll");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Shatter");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Shivan Dragon");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Smoke");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Stone Giant");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Stone Rain");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Tunnel");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Two-Headed Giant of Foriys");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Uthden Troll");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Wall of Fire");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Wall of Stone");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Wheel of Fortune");
+
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Aspect of Wolf");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Berserk");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Birds of Paradise");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Camouflage");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Channel");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Cockatrice");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Craw Wurm");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Elvish Archers");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Fastbond");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Fog");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Force of Nature");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Fungusaur");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Gaea's Liege");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Giant Growth");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Giant Spider");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Grizzly Bears");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Hurricane");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Ice Storm");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Instill Energy");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Ironroot Treefolk");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Kudzu");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Ley Druid");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Lifeforce");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Lifelace");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Living Artifact");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Living Lands");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Llanowar Elves");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Lure");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Instant", "Natural Selection");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Regeneration");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Regrowth");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Scryb Sprites");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Shanodin Dryads");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Stream of Life");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Thicket Basilisk");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Timber Wolves");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Tranquility");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Sorcery", "Tsunami");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Verduran Enchantress");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Wall of Brambles");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Wall of Ice");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Wall of Wood");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Wanderlust");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "War Mammoth");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Web");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Enchantment", "Wild Growth");
+
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Ankh of Mishra");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Basalt Monolith");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Black Lotus");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Black Vise");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Celestial Prism");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Chaos Orb");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Clockwork Beast");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Clockwork Beast");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Conservator");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Copper Tablet");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Crystal Rod");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Cyclopean Tomb");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Dingus Egg");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Disrupting Scepter");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Forcefield");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Gauntlet of Might");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Glasses of Urza");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Helm of Chatzuk");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Howling Mine");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Icy Manipulator");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Illusionary Mask");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Iron Star");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Ivory Cup");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Jade Monolith");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Jade Statue");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Jayemdae Tome");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Juggernaut");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Juggernaut");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Kormus Bell");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Library of Leng");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Living Wall");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Living Wall");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Mana Vault");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Meekstone");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Mox Emerald");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Mox Jet");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Mox Pearl");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Mox Ruby");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Mox Sapphire");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Nevinyrral's Disk");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Obsianus Golem");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Creature", "Obsianus Golem");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Rod of Ruin");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Sol Ring");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Soul Net");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Sunglasses of Urza");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "The Hive");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Throne of Bone");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Time Vault");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Winter Ord");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Artifact", "Wooden Sphere");
+
+
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Land", "Badlands");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Land", "Bayou");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Land", "Plateau");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Land", "Savannah");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Land", "Scrubland");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Land", "Taiga");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Land", "Tropical Island");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Land", "Tundra");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Land", "Underground Sea");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Basic Land", "Plains");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Basic Land", "Island");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Basic Land", "Swamp");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Basic Land", "Mountain");
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ("Basic Land", "Forest");
+
+
+
+
+
+
+
 
 DROP TABLE IF EXISTS CARD_SETS;
 CREATE TABLE CARD_SETS (
@@ -610,6 +918,11 @@ CREATE TABLE CARD_SETS (
     PRIMARY KEY (set_code, card_name),
     FOREIGN KEY (set_code) REFERENCES SET_RELEASES (set_code)
 );
+
+
+INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ("LEA", "Animate Wall", "W", 1, "Rare", "Dan Frazier", "lea-1-animate-wall.jpg", 1)
+
+
 
 DROP TABLE IF EXISTS SET_RELEASES;
 CREATE TABLE SET_RELEASES (
