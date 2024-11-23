@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find Cards</title>
+  <title>Card Search Page</title>
   <style>
     * {
       margin: 0;
@@ -11,13 +11,20 @@
       box-sizing: border-box;
     }
 
+    header {
+        width: 100%;
+        background-color: #3b82f6; 
+        padding: 20px; 
+        text-align: center;
+    }
+
+
     body {
       font-family: Arial, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       background-color: #f5f5f5;
-      padding-top: 30px;
     }
 
     .container {
@@ -25,7 +32,7 @@
       flex-direction: row;
       margin: 20px;
       width: 90%;
-      max-width: 1200px;
+      max-width: 2000px;
     }
 
     .filters {
@@ -59,35 +66,78 @@
     }
 
     .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    padding: 16px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        min-height: 400px; 
+        grid-auto-rows: minmax(300px, auto); 
     }
 
     .card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
+      background-color: #ffffff;
+      padding: 0px;
+      border: 1px solid #ddd;
+      border-radius: 50px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
     .card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px; 
     }
 
     .card h3 {
-    margin: 8px 0;
-    font-size: 1.2em;
+      margin-bottom: 10px;
+      font-size: 1.2em;
     }
+
+    .card p {
+      color: #666;
+      font-size: 0.9em;
+    }
+
+    .color-filters {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .color-btn {
+        background: none;
+        border: 2px solid transparent;
+        width: 50px; /* Set fixed width */
+        height: 50px; /* Set fixed height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%; /* Make button circular */
+        cursor: pointer;
+        transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .color-btn img {
+        width: 45px; 
+        height: 45px;
+        border-radius: 50%;
+    }
+
+    .color-btn:hover {
+        transform: scale(1.1);
+    }
+
+    .color-btn.active {
+        border-color: #3b82f6; /* Highlight active button */
+    }
+
   </style>
 </head>
 <body>
   <header>
-    <h1>Find Cards</h1>
+    <h1>Card Search Page</h1>
   </header>
 
   <div class="container">
@@ -96,174 +146,119 @@
       <h2>Filters</h2>
       <form>
         <label>
-          <input type="checkbox" id = "filter1" name="filter1">
+          <input type="checkbox" name="filter1">
           Filter 1
         </label><br>
         <label>
-          <input type="checkbox" id = "filter2" name="filter2">
+          <input type="checkbox" name="filter2">
           Filter 2
         </label><br>
         <label>
-          <input type="checkbox" id = "filter3" name="filter3">
+          <input type="checkbox" name="filter3">
           Filter 3
         </label>
       </form>
+      <div class="color-filters">
+        <button class="color-btn" data-color="white" data-selected="false">
+          <img src="/static/color-symbols/white-symbol.webp" alt="White" />
+        </button>
+        <button class="color-btn" data-color="blue" data-selected="false">
+          <img src="/static/color-symbols/blue-symbol.webp" alt="Blue" />
+        </button>
+        <button class="color-btn" data-color="black" data-selected="false">
+          <img src="/static/color-symbols/black-symbol.webp" alt="Black" />
+        </button>
+        <button class="color-btn" data-color="red" data-selected="false">
+          <img src="/static/color-symbols/red-symbol.webp" alt="Red" />
+        </button>
+        <button class="color-btn" data-color="green" data-selected="false">
+          <img src="/static/color-symbols/green-symbol.webp" alt="Green" />
+        </button>
+      </div>
+
     </aside>
 
     <!-- Search and Cards Section -->
     <section class="search-section">
       <!-- Search Bar -->
       <div class="search-bar">
-        <input type="text" placeholder="Search for cards...">
+        <input type="text" id="search" placeholder="Search for cards...">
       </div>
 
-    
-    
       <!-- Card Display -->
-    <div class="card-grid">
-        <div class="card" id = "lea-1-animate-wall"> 
-            <img src="{{ url_for('static', filename='card-urls/lea-1-animate-wall.jpg') }}" alt="Animate Wall">
-        </div>
-        <div class="card" id = "lea-2-armageddon">
-            <img src="{{ url_for('static', filename='card-urls/lea-2-armageddon.jpg') }}" alt="Armageddon">
-        </div>
-        <div class="card" id = "lea-3-balance">
-            <img src="{{ url_for('static', filename='card-urls/lea-3-balance.jpg') }}" alt="Balance">
-        </div>
-        <div class="card" id = "lea-4-benalish-hero">
-            <img src="{{ url_for('static', filename='card-urls/lea-4-benalish-hero.jpg') }}" alt="Benalish Hero">
-        </div>
-        <div class="card" id = "lea-5-black-ward">
-            <img src="{{ url_for('static', filename='card-urls/lea-5-black-ward.jpg') }}" alt="Black Ward">
-        </div>
-        <div class="card" id = "lea-6-blaze-of-glory">
-            <img src="{{ url_for('static', filename='card-urls/lea-6-blaze-of-glory.jpg') }}" alt="Blaze of Glory">
-        </div>
-        <div class="card" id = "lea-7-blessing">
-            <img src="{{ url_for('static', filename='card-urls/lea-7-blessing.jpg') }}" alt="Blessing">
-        </div>
-        <div class="card" id = "lea-8-blue-ward">
-            <img src="{{ url_for('static', filename='card-urls/lea-8-blue-ward.jpg') }}" alt="Blue Ward">
-        </div>
-        <div class="card" id = "lea-9-castle">
-            <img src="{{ url_for('static', filename='card-urls/lea-9-castle.jpg') }}" alt="Castle">
-        </div>
-        <div class="card" id = "lea-10-circle-of-protection-blue">
-            <img src="{{ url_for('static', filename='card-urls/lea-10-circle-of-protection-blue.jpg') }}" alt="Circle of Protection: Blue">
-        </div>
-        <div class="card" id = "lea-11-circle-of-protection-green">
-            <img src="{{ url_for('static', filename='card-urls/lea-11-circle-of-protection-green.jpg') }}" alt="Circle of Protection: Green">
-        </div>
-        <div class="card" id = "lea-12-circle-of-protection-red">
-            <img src="{{ url_for('static', filename='card-urls/lea-12-circle-of-protection-red.jpg') }}" alt="Circle of Protection: Red">
-        </div>
-        <div class="card" id = "lea-13-circle-of-protection-white">
-            <img src="{{ url_for('static', filename='card-urls/lea-13-circle-of-protection-white.jpg') }}" alt="Circle of Protection: White">
-        </div>
-        <div class="card" id = "lea-14-consecrate-land">
-            <img src="{{ url_for('static', filename='card-urls/lea-14-consecrate-land.jpg') }}" alt="Consecrate Land">
-        </div>
-        <div class="card" id = "lea-15-conversion">
-            <img src="{{ url_for('static', filename='card-urls/lea-15-conversion.jpg') }}" alt="Conversion">
-        </div>
-        <div class="card" id = "lea-16-crusade">
-            <img src="{{ url_for('static', filename='card-urls/lea-16-crusade.jpg') }}" alt="Crusade">
-        </div>
-        <div class="card" id = "lea-17-death-ward">
-            <img src="{{ url_for('static', filename='card-urls/lea-17-death-ward.jpg') }}" alt="Death Ward">
-        </div>
-        <div class="card" id = "lea-18-disenchant">
-            <img src="{{ url_for('static', filename='card-urls/lea-18-disenchant.jpg') }}" alt="Disenchant">
-        </div>
-        <div class="card" id = "lea-19-farmstead">
-            <img src="{{ url_for('static', filename='card-urls/lea-19-farmstead.jpg') }}" alt="Farmstead">
-        </div>
-        <div class="card" id = "lea-20-green-ward">
-            <img src="{{ url_for('static', filename='card-urls/lea-20-green-ward.jpg') }}" alt="Green Ward">
-        </div>
-        <div class="card" id = "lea-21-guardian-angel">
-            <img src="{{ url_for('static', filename='card-urls/lea-21-guardian-angel.jpg') }}" alt="Guardian Angel">
-        </div>
-        <div class="card" id = "lea-22-healing-slave">
-            <img src="{{ url_for('static', filename='card-urls/lea-22-healing-slave.jpg') }}" alt="Healing Slave">
-        </div>
-        <div class="card" id = "lea-23-holy-armor">
-            <img src="{{ url_for('static', filename='card-urls/lea-23-holy-armor.jpg') }}" alt="Holy Armor">
-        </div>
-        <div class="card" id = "lea-24-holy-strength">
-            <img src="{{ url_for('static', filename='card-urls/lea-24-holy-strength.jpg') }}" alt="Holy Strength">
-        </div>
-        <div class="card" id = "lea-25-island-sanctuary">
-            <img src="{{ url_for('static', filename='card-urls/lea-25-island-sanctuary.jpg') }}" alt="Island Sanctuary">
-        </div>
-        <div class="card" id = "lea-26-karma">
-            <img src="{{ url_for('static', filename='card-urls/lea-26-karma.jpg') }}" alt="Karma">
-        </div>
-        <div class="card" id = "lea-27-lance">
-            <img src="{{ url_for('static', filename='card-urls/lea-27-lance.jpg') }}" alt="Lance">
-        </div>
-        <div class="card" id = "lea-28-mesa-pegasus">
-            <img src="{{ url_for('static', filename='card-urls/lea-28-mesa-pegasus.jpg') }}" alt="Mesa Pegasus">
-        </div>
-        <div class="card" id = "lea-29-northern-paladin">
-            <img src="{{ url_for('static', filename='card-urls/lea-29-northern-paladin.jpg') }}" alt="Northern Paladin">
-        </div>
-        <div class="card" id = "lea-30-pearled-unicorn">
-            <img src="{{ url_for('static', filename='card-urls/lea-30-pearled-unicorn.jpg') }}" alt="Pearled Unicorn">
-        </div>
-        <div class="card" id = "lea-31-personal-incarnation">
-            <img src="{{ url_for('static', filename='card-urls/lea-31-personal-incarnation.jpg') }}" alt="Personal Incarnation">
-        </div>
-        <div class="card" id = "lea-32-purelace">
-            <img src="{{ url_for('static', filename='card-urls/lea-32-purelace.jpg') }}" alt="Purelace">
-        </div>
-        <div class="card" id = "lea-33-red-ward">
-            <img src="{{ url_for('static', filename='card-urls/lea-33-red-ward.jpg') }}" alt="Red Ward">
-        </div>
-        <div class="card" id = "lea-34-resurrection">
-            <img src="{{ url_for('static', filename='card-urls/lea-34-resurrection.jpg') }}" alt="Resurrection">
-        </div>
-        <div class="card" id = "lea-35-reverse-damage">
-            <img src="{{ url_for('static', filename='card-urls/lea-35-reverse-damage.jpg') }}" alt="Reverse Damage">
-        </div>
-        <div class="card" id = "lea-36-righteousness">
-            <img src="{{ url_for('static', filename='card-urls/lea-36-righteousness.jpg') }}" alt="Righteousness">
-        </div>
-        <div class="card" id = "lea-37-samite-healer">
-            <img src="{{ url_for('static', filename='card-urls/lea-37-samite-healer.jpg') }}" alt="Samite Healder">
-        </div>
-        <div class="card" id = "lea-38-savannah-lions">
-            <img src="{{ url_for('static', filename='card-urls/lea-38-savannah-lions.jpg') }}" alt="Savannah Lions">
-        </div>
-        <div class="card" id = "lea-39-serra-angel">
-            <img src="{{ url_for('static', filename='card-urls/lea-39-serra-angel.jpg') }}" alt="Serra Angel">
-        </div>
-        <div class="card" id = "lea-40-swords-to-plowshares">
-            <img src="{{ url_for('static', filename='card-urls/lea-40-swords-to-plowshares.jpg') }}" alt="Swords to Plowshares">
-        </div>
-    </div>
-  
+      <div id="card-grid" class="card-grid"></div>
+    </section>
   </div>
 
-
-
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const filter1Checkbox = document.getElementById('filter1');
-      const animateWallCard = document.getElementById('lea-1-animate-wall');
-  
-      filter1Checkbox.addEventListener('change', function () {
-        if (filter1Checkbox.checked) {
-          animateWallCard.style.display = 'none'; // Hide the card
-        } else {
-          animateWallCard.style.display = ''; // Show the card
+    document.addEventListener('DOMContentLoaded', async () => {
+        const cardGrid = document.getElementById('card-grid');
+        const searchInput = document.getElementById('search');
+
+        let files = []; // To store the list of all card files
+
+        try {
+            // Fetch the list of filenames from the Flask backend (via the new API route)
+            const response = await fetch('/api/card-urls');
+            files = await response.json(); // Parse the JSON response
+
+            console.log('Fetched files:', files);  // Log to see the list of files
+
+            // Initially display all cards
+            displayCards(files);
+
+        } catch (error) {
+            console.error('Error fetching card images:', error);
+            cardGrid.innerHTML = 'Failed to load card images.';
         }
-      });
+
+        // Event listener to apply the search filter
+        searchInput.addEventListener('input', () => {
+            const searchText = searchInput.value.toLowerCase();
+            const searchWords = searchText.split(/\s+/); // Split by spaces
+
+        // Filter the files based on the search words
+        const filteredFiles = files.filter(file => {
+            return searchWords.every(word => file.toLowerCase().includes(word));
+        });
+
+            // Display filtered cards
+            displayCards(filteredFiles);
+        });
+
+
+        const colorButtons = document.querySelectorAll('.color-btn');
+
+        colorButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            button.classList.toggle('active');
+
+            // Log selected colors (replace with filter logic later)
+            const selectedColors = Array.from(colorButtons)
+                .filter(btn => btn.classList.contains('active'))
+                .map(btn => btn.dataset.color);
+            console.log('Selected colors:', selectedColors);
+
+            });
+        });
+
+        // Function to display cards in the grid
+        function displayCards(files) {
+            // Clear the grid before appending new cards
+            cardGrid.innerHTML = '';
+
+            // Loop through each file name and create a card for it
+            files.forEach(file => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                const imageUrl = '/static/card-urls/' + file; // Build the image URL
+                const imageAlt = file.split('.')[0];  // Use the file name (without extension) as alt text
+
+                card.innerHTML = `<img src="${imageUrl}" alt="${imageAlt}">`;
+                cardGrid.appendChild(card);
+            });
+        }
     });
   </script>
-
-
-
-
 </body>
 </html>
