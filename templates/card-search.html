@@ -133,6 +133,43 @@
         border-color: #3b82f6; /* Highlight active button */
     }
 
+
+	.button-54 {
+		font-family: "Open Sans", sans-serif;
+		font-size: 16px;
+		letter-spacing: 2px;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: #000;
+		cursor: pointer;
+		border: 3px solid;
+		padding: 0.25em 0.5em;
+		box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+		position: relative;
+		user-select: none;
+		-webkit-user-select: none;
+		touch-action: manipulation;
+	}
+
+	.button-54:active {
+		box-shadow: 0px 0px 0px 0px;
+		top: 5px;
+		left: 5px;
+	}
+
+	.toggle {
+		background-color: #28a745;  /* New color when clicked */
+	}
+
+	@media (min-width: 768px) {
+		.button-54 {
+			padding: 0.25em 0.75em;
+		}
+	}
+
+
+	
+
   </style>
 </head>
 <body>
@@ -144,37 +181,35 @@
     <!-- Filters Section -->
     <aside class="filters">
       <h2>Filters</h2>
-      <form>
-        <label>
-          <input type="checkbox" name="filter1">
-          Filter 1
-        </label><br>
-        <label>
-          <input type="checkbox" name="filter2">
-          Filter 2
-        </label><br>
-        <label>
-          <input type="checkbox" name="filter3">
-          Filter 3
-        </label>
-      </form>
-      <div class="color-filters">
-        <button class="color-btn" data-color="white" data-selected="false">
-          <img src="/static/color-symbols/white-symbol.webp" alt="White" />
-        </button>
-        <button class="color-btn" data-color="blue" data-selected="false">
-          <img src="/static/color-symbols/blue-symbol.webp" alt="Blue" />
-        </button>
-        <button class="color-btn" data-color="black" data-selected="false">
-          <img src="/static/color-symbols/black-symbol.webp" alt="Black" />
-        </button>
-        <button class="color-btn" data-color="red" data-selected="false">
-          <img src="/static/color-symbols/red-symbol.webp" alt="Red" />
-        </button>
-        <button class="color-btn" data-color="green" data-selected="false">
-          <img src="/static/color-symbols/green-symbol.webp" alt="Green" />
-        </button>
-      </div>
+      	<div class="color-filters">
+			<button class="color-btn" color="white">
+			<img src="/static/color-symbols/white-symbol.webp" alt="White" />
+			</button>
+			<button class="color-btn" color="blue">
+			<img src="/static/color-symbols/blue-symbol.webp" alt="Blue" />
+			</button>
+			<button class="color-btn" color="black">
+			<img src="/static/color-symbols/black-symbol.webp" alt="Black" />
+			</button>
+			<button class="color-btn" color="red">
+			<img src="/static/color-symbols/red-symbol.webp" alt="Red" />
+			</button>
+			<button class="color-btn" color="green">
+			<img src="/static/color-symbols/green-symbol.webp" alt="Green" />
+			</button>
+		</div><br>
+
+		<div class="keyword-filters">
+			<button class="button-54" role="button" id="flying">Flying</button>
+
+
+		</div>
+
+		<!-- Save and Reset Buttons -->
+		<div style="margin-top: 20px;">
+			<button class="button-54" role="button" id="reset-filters">Reset Filters</button>
+			<button class="button-54" role="button" id="save-filters">Save Filters</button>
+		</div>
 
     </aside>
 
@@ -190,10 +225,9 @@
     </section>
   </div>
 
-  <script>
+  	<script>
     document.addEventListener('DOMContentLoaded', async () => {
         const cardGrid = document.getElementById('card-grid');
-        const searchInput = document.getElementById('search');
 
         let files = []; // To store the list of all card files
 
@@ -201,8 +235,6 @@
             // Fetch the list of filenames from the Flask backend (via the new API route)
             const response = await fetch('/api/card-urls');
             files = await response.json(); // Parse the JSON response
-
-            console.log('Fetched files:', files);  // Log to see the list of files
 
             // Initially display all cards
             displayCards(files);
@@ -212,35 +244,44 @@
             cardGrid.innerHTML = 'Failed to load card images.';
         }
 
+
         // Event listener to apply the search filter
+		const searchInput = document.getElementById('search');
         searchInput.addEventListener('input', () => {
             const searchText = searchInput.value.toLowerCase();
             const searchWords = searchText.split(/\s+/); // Split by spaces
 
-        // Filter the files based on the search words
-        const filteredFiles = files.filter(file => {
-            return searchWords.every(word => file.toLowerCase().includes(word));
-        });
+			// Filter the files based on the search words
+			const filteredFiles = files.filter(file => {
+				return searchWords.every(word => file.toLowerCase().includes(word));
+			});
 
             // Display filtered cards
             displayCards(filteredFiles);
         });
 
+		
+		const filterForm = document.getElementById('filter-form');
+    	const saveFiltersBtn = document.getElementById('save-filters');
+    	const resetFiltersBtn = document.getElementById('reset-filters');
+		const colorButtons = document.querySelectorAll('.color-btn');
 
-        const colorButtons = document.querySelectorAll('.color-btn');
+		// Save Filters button click event
+		saveFiltersBtn.addEventListener('click', () => {
+			const filters = Array.from(filterForm.elements)
+				.filter(input => input.checked)
+				.map(input => input.name);
 
-        colorButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            button.classList.toggle('active');
+			const activeColors = Array.from(colorButtons)
+				.filter(btn => btn.classList.contains('active'))
+				.map(btn => btn.getAttribute('color'));
 
-            // Log selected colors (replace with filter logic later)
-            const selectedColors = Array.from(colorButtons)
-                .filter(btn => btn.classList.contains('active'))
-                .map(btn => btn.dataset.color);
-            console.log('Selected colors:', selectedColors);
+			console.log('Saved Filters:', filters, 'Saved Colors:', activeColors);
+			alert('Filters saved successfully!');
+    	});
+        
 
-            });
-        });
+
 
         // Function to display cards in the grid
         function displayCards(files) {
@@ -258,7 +299,10 @@
                 cardGrid.appendChild(card);
             });
         }
+
     });
-  </script>
+
+
+	</script>
 </body>
 </html>
