@@ -31,6 +31,16 @@ def search():
 
     return jsonify(results)
 
+@app.route('/api/filter', methods=['GET'])
+def filter():
+    search_term = request.args.get('term')  # Get the search term from the query parameters
+    if not search_term:
+        return jsonify({"error": "No search term provided"}), 400
+    
+    results = search_database(search_term) 
+
+    return jsonify(results)
+
 
 #HELPER FUNCTIONS (sql)
 

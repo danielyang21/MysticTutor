@@ -147,14 +147,17 @@
 		touch-action: manipulation;
 	}
 
-	.button-54:active {
+	.button-54:active{
 		box-shadow: 0px 0px 0px 0px;
 		top: 5px;
 		left: 5px;
 	}
 
-	.toggle {
-		background-color: #28a745;  /* New color when clicked */
+	.button-54.pressed {
+		color:rgb(28, 228, 61);
+		box-shadow: 0px 0px 0px 0px;
+		top: 5px;
+		left: 5px;
 	}
 
 	@media (min-width: 768px) {
@@ -274,23 +277,32 @@
         }); */
 
 		
-		const filterForm = document.getElementById('filter-form');
     	const saveFiltersBtn = document.getElementById('save-filters');
     	const resetFiltersBtn = document.getElementById('reset-filters');
 		const colorButtons = document.querySelectorAll('.color-btn');
+		const keywordButtons = document.querySelectorAll('.keyword-filter');
+
+		colorButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				button.classList.toggle('active');
+			});
+		});
+
+		keywordButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				button.classList.toggle('pressed');
+			});
+		})
+
+
 
 		// Save Filters button click event
-		saveFiltersBtn.addEventListener('click', () => {
-			const filters = Array.from(filterForm.elements)
-				.filter(input => input.checked)
-				.map(input => input.name);
-
+		saveFiltersBtn.addEventListener('click', async () => {
 			const activeColors = Array.from(colorButtons)
-				.filter(btn => btn.classList.contains('active'))
-				.map(btn => btn.getAttribute('color'));
+			.filter(button => button.classList.contains('active'))
+			.map(button => button.getAttribute('color'));
 
-			console.log('Saved Filters:', filters, 'Saved Colors:', activeColors);
-			alert('Filters saved successfully!');
+			if (activeColors.length > 0) alert('Active colors: ' + activeColors.join(', '));
     	});
         
 
