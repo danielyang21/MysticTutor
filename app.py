@@ -21,7 +21,18 @@ def card_urls():
     filenames.sort(key=lambda x: int(x.split('-')[1]))  # Sort by number after 'lea-'
     return jsonify(filenames)
 
+@app.route('/api/search', methods=['GET'])
+def search():
+    search_term = request.args.get('term')  # Get the search term from the query parameters
+    if not search_term:
+        return jsonify({"error": "No search term provided"}), 400
+    
+    results = search_database(search_term) 
 
+    return jsonify(results)
+
+
+#HELPER FUNCTIONS (sql)
 
 
 def search_database(search_term):
@@ -30,18 +41,19 @@ def search_database(search_term):
 
     search_term = f"%{search_term}%"
 
+    print(search_term)
+
     # Query the database for card names that match the search term, use the LIKE function to give all results which include the search term
     cursor.execute('''
-        SELECT card_name, image_url
+        SELECT image_url
         FROM CARD_SETS
         WHERE card_name LIKE ?
-    ''', (search_term))
+    ''', (search_term,))
     
     results = cursor.fetchall()
 
     # Close the connection
     connection.close()
-
     return results
 
 
