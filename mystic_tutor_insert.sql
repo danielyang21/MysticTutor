@@ -969,14 +969,14 @@ INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artis
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Time Walk', 'U', 2, 'Rare', 'Amy Weber', 'lea-83-time-walk.jpg', 83);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Timetwister', '2U', 3, 'Rare', 'Mark Tedin', 'lea-84-timetwister.jpg', 84);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Twiddle', 'U', 1, 'Common', 'Rob Alexander', 'lea-85-twiddle.jpg', 85);
-INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Unsommon', 'U', 1, 'Common', 'Douglas Schuler', 'lea-86-unsommon.jpg', 86);
+INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Unsummon', 'U', 1, 'Common', 'Douglas Schuler', 'lea-86-unsummon.jpg', 86);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Vesuvan Doppelganger', '3UU', 5, 'Rare', 'Quinton Hoover', 'lea-87-vesuvan-doppelganger.jpg', 87);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Volcanic Eruption', 'XUUU', 3, 'Rare', 'Douglas Schuler', 'lea-88-volcanic-eruption.jpg', 88);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Wall of Air', '1UU', 3, 'Uncommon', 'Richard Thomas', 'lea-89-wall-of-air.jpg', 89);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Wall of Water', '1UU', 3, 'Uncommon', 'Richard Thomas', 'lea-90-wall-of-water.jpg', 90);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Water Elemental', '3UU', 5, 'Uncommon', 'Jeff A. Menges', 'lea-91-water-elemental.jpg', 91);
 
-INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Animate Dead', '1B', 2, 'Uncommon', 'Anson Maddocks', 'lea-92-animte-dead.jpg', 92);
+INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Animate Dead', '1B', 2, 'Uncommon', 'Anson Maddocks', 'lea-92-animate-dead.jpg', 92);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Bad Moon', '1B', 2, 'Rare', 'Jesper Myrfors', 'lea-93-bad-moon.jpg', 93);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Black Knight', 'BB', 2, 'Uncommon', 'Jeff A. Menges', 'lea-94-black-knight.jpg', 94);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Bog Wraith', '3B', 4, 'Uncommon', 'Jeff A. Menges', 'lea-95-bog-wraith.jpg', 95);
@@ -1059,7 +1059,7 @@ INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artis
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Rock Hydra', 'XRR', 2, 'Rare', 'Jeff A. Menges', 'lea-171-rock-hydra.jpg', 171);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Sedge Troll', '2R', 3, 'Rare', 'Dan Frazier', 'lea-172-sedge-troll.jpg', 172);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Shatter', '1R', 2, 'Common', 'Amy Weber', 'lea-173-shatter.jpg', 173);
-INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Shiven Dragon', '4RR', 6, 'Rare', 'Melissa Benson', 'lea-174-shiven-dragon.jpg', 174);
+INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Shivan Dragon', '4RR', 6, 'Rare', 'Melissa Benson', 'lea-174-shivan-dragon.jpg', 174);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Smoke', 'RR', 2, 'Rare', 'Jesper Myrfors', 'lea-175-smoke.jpg', 175);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Stone Giant', '2RR', 4, 'Uncommon', 'Dameon Willich', 'lea-176-stone-giant.jpg', 176);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Stone Rain', '2R', 3, 'Common', 'Daniel Gelon', 'lea-177-stone-rain.jpg', 177);
@@ -1094,7 +1094,7 @@ INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artis
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Ley Druid', '2G', 3, 'Uncommon', 'Sandra Everingham', 'lea-205-ley-druid.jpg', 205);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Lifeforce', 'GG', 2, 'Uncommon', 'Dameon Willich', 'lea-206-lifeforce.jpg', 206);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Lifelace', 'G', 1, 'Rare', 'Amy Weber', 'lea-207-lifelace.jpg', 207);
-INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Living Artifact', 'G', 1, 'Rare', 'Anson Maddocks', 'lea-208-lifelace.jpg', 208);
+INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Living Artifact', 'G', 1, 'Rare', 'Anson Maddocks', 'lea-208-living-artifact.jpg', 208);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Living Lands', '3G', 4, 'Rare', 'Jesper Myrfors', 'lea-209-living-lands.jpg', 209);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Llanowar Elves', 'G', 1, 'Common', 'Anson Maddocks', 'lea-210-llanowar-elves.jpg', 210);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Lure', '1GG', 3, 'Uncommon', 'Anson Maddocks', 'lea-211-lure.jpg', 211);
@@ -1136,7 +1136,7 @@ INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artis
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Helm of Chatzuk', '1', 1, 'Rare', 'Mark Tedin', 'lea-246-helm-of-chatzuk.jpg', 246);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Howling Mine', '2', 2, 'Rare', 'Mark Poole', 'lea-247-howling-mine.jpg', 247);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Icy Manipulator', '4', 4, 'Uncommon', 'Douglas Schuler', 'lea-248-icy-manipulator.jpg', 248);
-INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Illusionary Mark', '2', 2, 'Rare', 'Amy Weber', 'lea-249-illusionary-mark.jpg', 249);
+INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Illusionary Mask', '2', 2, 'Rare', 'Amy Weber', 'lea-249-illusionary-mask.jpg', 249);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Iron Star', '1', 1, 'Uncommon', 'Dan Frazier', 'lea-250-iron-star.jpg', 250);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Ivory Cup', '1', 1, 'Uncommon', 'Anson Maddocks', 'lea-251-ivory-cup.jpg', 251);
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Jade Monolith', '4', 4, 'Rare', 'Anson Maddocks', 'lea-252-jade-monolith.jpg', 252);

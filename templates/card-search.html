@@ -198,9 +198,23 @@
 			</button>
 		</div><br>
 
-		<div class="keyword-filter">
-			<button class="button-54" role="button" id="flying">Flying</button>
-		</div>
+
+        <!-- Keyword Filter Buttons-->
+		<button class="button-54" filter="keyword-filter" keyword="banding">Banding</button>
+        <button class="button-54" filter="keyword-filter" keyword="defender">Defender</button>
+        <button class="button-54" filter="keyword-filter" keyword="first strike">First Strike</button>
+        <button class="button-54" filter="keyword-filter" keyword="flying">Flying</button>
+        <button class="button-54" filter="keyword-filter" keyword="forestwalk">Forestwalk</button>
+        <button class="button-54" filter="keyword-filter" keyword="haste">Haste</button>
+        <button class="button-54" filter="keyword-filter" keyword="mountainwalk">Mountainwalk</button>
+        <button class="button-54" filter="keyword-filter" keyword="protection from black">Protection from Black</button>
+        <button class="button-54" filter="keyword-filter" keyword="protection from white">Protection from White</button>
+        <button class="button-54" filter="keyword-filter" keyword="reach">Reach</button>
+        <button class="button-54" filter="keyword-filter" keyword="swampwalk">Swampwalk</button>
+        <button class="button-54" filter="keyword-filter" keyword="trample">Trample</button>
+        <button class="button-54" filter="keyword-filter" keyword="vigilance">Vigilance</button>
+
+
 
 		<!-- Save and Reset Buttons -->
 		<div style="margin-top: 20px;">
@@ -256,7 +270,6 @@
 				// Display filtered cards
 				displayCards(filteredFiles);
 			}
-			
         });
 
 
@@ -280,7 +293,7 @@
     	const saveFiltersBtn = document.getElementById('save-filters');
     	const resetFiltersBtn = document.getElementById('reset-filters');
 		const colorButtons = document.querySelectorAll('.color-btn');
-		const keywordButtons = document.querySelectorAll('.keyword-filter');
+		const keywordButtons = document.querySelectorAll('[filter = "keyword-filter"]');
 
 		colorButtons.forEach(button => {
 			button.addEventListener('click', () => {
