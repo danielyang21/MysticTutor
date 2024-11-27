@@ -220,12 +220,12 @@
         <div style="margin-top: 20px"></div>
         <!-- Type Filter Buttons-->
         <h2>Types</h2>
-        <button class="button-54" filter="type-filter" type="artifact">Artifact</button>
-        <button class="button-54" filter="type-filter" type="basic land">Basic Land</button>
-        <button class="button-54" filter="type-filter" type="creature">Creature</button>
-        <button class="button-54" filter="type-filter" type="enchantment">Enchantment</button>
-        <button class="button-54" filter="type-filter" type="instant">Instant</button>
-        <button class="button-54" filter="type-filter" type="sorcery">Sorcery</button>
+        <button class="button-54" filter="type-filter" type="Artifact">Artifact</button>
+        <button class="button-54" filter="type-filter" type="Basic Land">Basic Land</button>
+        <button class="button-54" filter="type-filter" type="Creature">Creature</button>
+        <button class="button-54" filter="type-filter" type="Enchantment">Enchantment</button>
+        <button class="button-54" filter="type-filter" type="Instant">Instant</button>
+        <button class="button-54" filter="type-filter" type="Sorcery">Sorcery</button>
 
 
         <div style="margin-top: 20px"></div>
@@ -359,24 +359,6 @@
         }
 
 
-		const searchInput = document.getElementById('search');
-		searchInput.addEventListener('input', async () => {
-            const searchText = searchInput.value.toLowerCase();
-
-			if (searchText === "") displayCards(files);
-			else{
-				// Filter the files based on the search words
-				const response = await fetch(`/api/search?term=${encodeURIComponent(searchText)}`);
-				responseFiles = await response.json();
-
-				const filteredFiles = responseFiles.map(tuple => tuple[0]);
-				// Display filtered cards
-				displayCards(filteredFiles);
-			}
-        });
-
-
-
         // Event listener to apply the search filter (THIS DOES NOT USE SQL)
 		/* const searchInput = document.getElementById('search');
         searchInput.addEventListener('input', () => {
@@ -393,7 +375,6 @@
         }); */
 
 	    
-        const resetFiltersBtn = document.getElementById('reset-filters');
 		
         //COLOURS
 		const colorButtons = document.querySelectorAll('.color-btn');
@@ -431,7 +412,7 @@
             const value = input.value.trim();
             // Add the selected subtype if it's not already selected
             if (value && !selectedSubtypes.has(value)) {
-                selectedSubtypes.add(value);
+                selectedSubtypes.add(value.toLowerCase());
 
                 // Create the tag element
                 const tag = document.createElement('div');
@@ -465,47 +446,79 @@
 
 
 		//SAVE FILTERS
-        const saveFiltersBtn = document.getElementById('save-filters');
+        let activeColors = [];
+        let activeKeywords = [];
+        let activeTypes = [];
+        let activeSets = [];
+        let saveFiltersBtn = document.getElementById('save-filters');
 		saveFiltersBtn.addEventListener('click', async () => {
-			const activeColors = Array.from(colorButtons)
+            activeColors = Array.from(colorButtons)
 			.filter(button => button.classList.contains('active'))
 			.map(button => button.getAttribute('color'));
 
-            const activeKeywords = Array.from(keywordButtons)
+            activeKeywords = Array.from(keywordButtons)
 			.filter(button => button.classList.contains('pressed'))
 			.map(button => button.getAttribute('keyword'));
 
-            const activeTypes = Array.from(typeButtons)
+            activeTypes = Array.from(typeButtons)
 			.filter(button => button.classList.contains('pressed'))
 			.map(button => button.getAttribute('type'));
 
-            const activeSets = Array.from(setButtons)
+            activeSets = Array.from(setButtons)
 			.filter(button => button.classList.contains('pressed'))
 			.map(button => button.getAttribute('set'));
 
-			if (activeColors.length > 0) alert('Active colors: ' + activeColors.join(', '));
-            if (activeKeywords.length > 0) alert('Active keywords: ' + activeKeywords.join(', '));
-            if (activeTypes.length > 0) alert('Active types: ' + activeTypes.join(', '));
-            if (selectedSubtypes.size > 0) alert('Active subtypes: ' + [...selectedSubtypes].join(', '));
-            if (activeSets.length > 0) alert('Active sets: ' + activeSets.join(', '));
+            alert("Filters saved successfully!")
     	});
         
 
 
         //RESET FILTERS
-        const reserFiltersBtn = document.getElementById('reset-filters');
-		reserFiltersBtn.addEventListener('click', () => {
+        const resetFiltersBtn = document.getElementById('reset-filters');
+		resetFiltersBtn.addEventListener('click', async () => {
+            // Remove all the buttons
             colorButtons.forEach(button => {button.classList.remove('active'); });
             keywordButtons.forEach(button => {button.classList.remove('pressed'); });
             typeButtons.forEach(button => {button.classList.remove('pressed'); });
+            setButtons.forEach(button => {button.classList.remove('pressed'); });
 
             Array.from(selectedSubtypesContainer.children).forEach(tag => {
                 selectedSubtypesContainer.removeChild(tag);
             });
-            selectedSubtypes.clear();
 
-            setButtons.forEach(button => {button.classList.remove('pressed'); });
+            // Clear all the active filters
+            activeColors = [];
+            activeKeywords = [];
+            activeTypes = [];
+            selectedSubtypes.clear();  // Assuming selectedSubtypes is a Set
+            activeSets = [];
     	});
+
+
+
+        const searchInput = document.getElementById('search');
+		searchInput.addEventListener('input', async () => {
+            const searchText = searchInput.value.toLowerCase();
+
+			if (searchText === "") displayCards(files);
+			else{
+				// Filter the files based on the search words
+                const queryParams = new URLSearchParams({
+                    term: searchText,
+                    colors: activeColors.join(','), 
+                    keywords: activeKeywords.join(','), 
+                    types: activeTypes.join(','), 
+                    subtypes: [...selectedSubtypes].join(','), 
+                    sets: activeSets.join(',')
+                });
+                const response = await fetch(`/api/search?${queryParams.toString()}`);
+				responseFiles = await response.json();
+
+				const filteredFiles = responseFiles.map(tuple => tuple[0]);
+				// Display filtered cards
+				displayCards(filteredFiles);
+			}
+        });
 
 
 
