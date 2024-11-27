@@ -14,7 +14,7 @@
     header {
         width: 100%;
         background-color: #3b82f6; 
-        padding: 20px; 
+        padding: 10px; 
         text-align: center;
     }
 
@@ -179,7 +179,7 @@
   <div class="container">
     <!-- Filters Section -->
     <aside class="filters">
-      <h2>Filters</h2>
+      <h2>Colours</h2>
       	<div class="color-filters">
 			<button class="color-btn" color="white">
 			<img src="/static/color-symbols/white-symbol.webp" alt="White" />
@@ -200,6 +200,7 @@
 
 
         <!-- Keyword Filter Buttons-->
+        <h2>Keywords</h2>
 		<button class="button-54" filter="keyword-filter" keyword="banding">Banding</button>
         <button class="button-54" filter="keyword-filter" keyword="defender">Defender</button>
         <button class="button-54" filter="keyword-filter" keyword="first strike">First Strike</button>
@@ -214,10 +215,112 @@
         <button class="button-54" filter="keyword-filter" keyword="trample">Trample</button>
         <button class="button-54" filter="keyword-filter" keyword="vigilance">Vigilance</button>
 
+        
+
+        <div style="margin-top: 20px"></div>
+        <!-- Type Filter Buttons-->
+        <h2>Types</h2>
+        <button class="button-54" filter="type-filter" type="artifact">Artifact</button>
+        <button class="button-54" filter="type-filter" type="basic land">Basic Land</button>
+        <button class="button-54" filter="type-filter" type="creature">Creature</button>
+        <button class="button-54" filter="type-filter" type="enchantment">Enchantment</button>
+        <button class="button-54" filter="type-filter" type="instant">Instant</button>
+        <button class="button-54" filter="type-filter" type="sorcery">Sorcery</button>
+
+
+        <div style="margin-top: 20px"></div>
+        <!-- Subtypes Filter Buttons-->
+        <h2>Subtypes</h2>
+        <body>
+            <input type="text" list="input" id="subtype-input" placeholder="Select a subtype">
+            <datalist id="input">
+                <option subtype="angel">Angel</option>
+                <option subtype="archer">Archer</option>
+                <option subtype="assassin">Assassin</option>
+                <option subtype="aura">Aura</option>
+                <option subtype="avatar">Avatar</option>
+                <option subtype="barbarian">Barbarian</option>
+                <option subtype="basilisk">Basilisk</option>
+                <option subtype="bear">Bear</option>
+                <option subtype="beast">Beast</option>
+                <option subtype="bird">Bird</option>
+                <option subtype="cat">Cat</option>
+                <option subtype="cleric">Cleric</option>
+                <option subtype="cockatrice">Cockatrice</option>
+                <option subtype="demon">Demon</option>
+                <option subtype="dinosaur">Dinosaur</option>
+                <option subtype="djinn">Djinn</option>
+                <option subtype="dragon">Dragon</option>
+                <option subtype="druid">Druid</option>
+                <option subtype="dryad">Dryad</option>
+                <option subtype="dwarf">Dwarf</option>
+                <option subtype="elemental">Elemental</option>
+                <option subtype="elephant">Elephant</option>
+                <option subtype="elf">Elf</option>
+                <option subtype="faerie">Faerie</option>
+                <option subtype="forest">Forest</option>
+                <option subtype="fungus">Fungus</option>
+                <option subtype="gargoyle">Gargoyle</option>
+                <option subtype="giant">Giant</option>
+                <option subtype="goblin">Goblin</option>
+                <option subtype="golem">Golem</option>
+                <option subtype="horse">Horse</option>
+                <option subtype="human">Human</option>
+                <option subtype="hydra">Hydra</option>
+                <option subtype="illusion">Illusion</option>
+                <option subtype="imp">Imp</option>
+                <option subtype="incarnation">Incarnation</option>
+                <option subtype="island">Island</option>
+                <option subtype="juggernaut">Juggernaut</option>
+                <option subtype="knight">Knight</option>
+                <option subtype="merfolk">Merfolk</option>
+                <option subtype="minotaur">Minotaur</option>
+                <option subtype="mountain">Mountain</option>
+                <option subtype="nightmare">Nightmare</option>
+                <option subtype="nymph">Nymph</option>
+                <option subtype="ogre">Ogre</option>
+                <option subtype="orc">Orc</option>
+                <option subtype="pegasus">Pegasus</option>
+                <option subtype="pirate">Pirate</option>
+                <option subtype="plains">Plains</option>
+                <option subtype="plant">Plant</option>
+                <option subtype="rat">Rat</option>
+                <option subtype="serpent">Serpent</option>
+                <option subtype="shade">Shade</option>
+                <option subtype="shapeshifter">Shapeshifter</option>
+                <option subtype="skeleton">Skeleton</option>
+                <option subtype="sliver">Sliver</option>
+                <option subtype="soldier">Soldier</option>
+                <option subtype="specter">Specter</option>
+                <option subtype="spider">Spider</option>
+                <option subtype="spirit">Spirit</option>
+                <option subtype="swamp">Swamp</option>
+                <option subtype="treefolk">Treefolk</option>
+                <option subtype="troll">Troll</option>
+                <option subtype="unicorn">Unicorn</option>
+                <option subtype="vampire">Vampire</option>
+                <option subtype="wall">Wall</option>
+                <option subtype="warrior">Warrior</option>
+                <option subtype="wizard">Wizard</option>
+                <option subtype="wolf">Wolf</option>
+                <option subtype="wraith">Wraith</option>
+                <option subtype="wurm">Wurm</option>
+                <option subtype="zombie">Zombie</option>
+            </datalist>
+        </body>
+
+        <div class="selected-subtypes" id="selected-subtypes"></div>
+
+
+        <div style="margin-top: 20px"></div>
+        <!-- Set Filter Buttons-->
+        <h2>Sets</h2>
+        <button class="button-54" filter="set-filter" set="LEA">Limited Edition Alpha</button>
+        <button class="button-54" filter="set-filter" set="STH">Stronghold</button>
 
 
 		<!-- Save and Reset Buttons -->
-		<div style="margin-top: 20px;">
+		<div style="margin-top: 20px">
 			<button class="button-54" role="button" id="reset-filters">Reset Filters</button>
 			<button class="button-54" role="button" id="save-filters">Save Filters</button>
 		</div>
@@ -289,18 +392,20 @@
             displayCards(filteredFiles);
         }); */
 
+	    
+        const resetFiltersBtn = document.getElementById('reset-filters');
 		
-    	const saveFiltersBtn = document.getElementById('save-filters');
-    	const resetFiltersBtn = document.getElementById('reset-filters');
+        //COLOURS
 		const colorButtons = document.querySelectorAll('.color-btn');
-		const keywordButtons = document.querySelectorAll('[filter = "keyword-filter"]');
-
 		colorButtons.forEach(button => {
 			button.addEventListener('click', () => {
 				button.classList.toggle('active');
 			});
 		});
 
+
+        //KEYWORDS
+        const keywordButtons = document.querySelectorAll('[filter = "keyword-filter"]');
 		keywordButtons.forEach(button => {
 			button.addEventListener('click', () => {
 				button.classList.toggle('pressed');
@@ -308,16 +413,100 @@
 		})
 
 
+        //TYPES
+        const typeButtons = document.querySelectorAll('[filter = "type-filter"]');
+		typeButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				button.classList.toggle('pressed');
+			});
+		})
 
-		// Save Filters button click event
+
+
+        //SUBTYPES
+        const input = document.getElementById('subtype-input');
+        const selectedSubtypesContainer = document.getElementById('selected-subtypes');
+        const selectedSubtypes = new Set();
+        input.addEventListener('change', () => {
+            const value = input.value.trim();
+            // Add the selected subtype if it's not already selected
+            if (value && !selectedSubtypes.has(value)) {
+                selectedSubtypes.add(value);
+
+                // Create the tag element
+                const tag = document.createElement('div');
+                tag.className = 'tag';
+                tag.innerHTML = `<span>${value}</span><button>&times;</button>`;
+
+                // Add remove functionality
+                tag.querySelector('button').addEventListener('click', () => {
+                    selectedSubtypes.delete(value);
+                    selectedSubtypesContainer.removeChild(tag);
+                });
+
+                // Add the tag to the container
+                selectedSubtypesContainer.appendChild(tag);
+            }
+
+            // Clear the input field
+            input.value = '';
+        });
+
+
+
+        //SETS
+        const setButtons = document.querySelectorAll('[filter = "set-filter"]');
+		setButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				button.classList.toggle('pressed');
+			});
+		})
+
+
+
+		//SAVE FILTERS
+        const saveFiltersBtn = document.getElementById('save-filters');
 		saveFiltersBtn.addEventListener('click', async () => {
 			const activeColors = Array.from(colorButtons)
 			.filter(button => button.classList.contains('active'))
 			.map(button => button.getAttribute('color'));
 
+            const activeKeywords = Array.from(keywordButtons)
+			.filter(button => button.classList.contains('pressed'))
+			.map(button => button.getAttribute('keyword'));
+
+            const activeTypes = Array.from(typeButtons)
+			.filter(button => button.classList.contains('pressed'))
+			.map(button => button.getAttribute('type'));
+
+            const activeSets = Array.from(setButtons)
+			.filter(button => button.classList.contains('pressed'))
+			.map(button => button.getAttribute('set'));
+
 			if (activeColors.length > 0) alert('Active colors: ' + activeColors.join(', '));
+            if (activeKeywords.length > 0) alert('Active keywords: ' + activeKeywords.join(', '));
+            if (activeTypes.length > 0) alert('Active types: ' + activeTypes.join(', '));
+            if (selectedSubtypes.size > 0) alert('Active subtypes: ' + [...selectedSubtypes].join(', '));
+            if (activeSets.length > 0) alert('Active sets: ' + activeSets.join(', '));
     	});
         
+
+
+        //RESET FILTERS
+        const reserFiltersBtn = document.getElementById('reset-filters');
+		reserFiltersBtn.addEventListener('click', () => {
+            colorButtons.forEach(button => {button.classList.remove('active'); });
+            keywordButtons.forEach(button => {button.classList.remove('pressed'); });
+            typeButtons.forEach(button => {button.classList.remove('pressed'); });
+
+            Array.from(selectedSubtypesContainer.children).forEach(tag => {
+                selectedSubtypesContainer.removeChild(tag);
+            });
+            selectedSubtypes.clear();
+
+            setButtons.forEach(button => {button.classList.remove('pressed'); });
+    	});
+
 
 
 

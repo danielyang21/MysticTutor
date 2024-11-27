@@ -322,8 +322,12 @@ INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ('green', 'Forest');
 
 
 
-
-
+--TEST CARD
+INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ('white', 'Sliver Queen');
+INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ('blue', 'Sliver Queen');
+INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ('black', 'Sliver Queen');
+INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ('red', 'Sliver Queen');
+INSERT INTO CARD_COLOURS (colour_name, card_name) VALUES ('green', 'Sliver Queen');
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -377,9 +381,6 @@ INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ('trample', 'War Mamm
 INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ('reach', 'Web');
 INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ('banding', 'Helm of Chatzuk');
 INSERT INTO CARD_KEYWORDS (keyword_name, card_name) VALUES ('flying', 'The Hive');
-
-
-
 
 
 
@@ -572,6 +573,8 @@ INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ('mountain', 'Mountai
 INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ('forest', 'Forest');
 
 
+--TEST CARD
+INSERT INTO CARD_SUBTYPES (subtype_name, card_name) VALUES ('sliver', 'Sliver Queen');
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -877,6 +880,11 @@ INSERT INTO CARD_TYPES (type_name, card_name) VALUES ('Basic Land', 'Island');
 INSERT INTO CARD_TYPES (type_name, card_name) VALUES ('Basic Land', 'Swamp');
 INSERT INTO CARD_TYPES (type_name, card_name) VALUES ('Basic Land', 'Mountain');
 INSERT INTO CARD_TYPES (type_name, card_name) VALUES ('Basic Land', 'Forest');
+
+
+
+--TEST CARD
+INSERT INTO CARD_TYPES (type_name, card_name) VALUES ('Legendary Creature', 'Sliver Queen');
 
 
 
@@ -1191,8 +1199,15 @@ INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artis
 INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('LEA', 'Forest', '0', 0, 'Common', 'Christopher Rush', 'lea-295-forest.jpg', 295);
 
 
+--TEST CARD
+INSERT INTO CARD_SETS (set_code, card_name, mana_cost, mana_value, rarity, artist, image_url, set_number) VALUES ('STH', 'Sliver Queen', 'WUBRG', 5, 'Rare', 'Ron Spencer', 'sth-129-sliver-queen.jpg', 129);
+
+
+
+
 ---------------------------------------------------------------------------------------------------------------------
 INSERT INTO SET_RELEASES (set_code, set_name, release_date, total_cards) VALUES ('LEA', 'Limited Edition Alpha', 'August 5, 1993', 295);
+INSERT INTO SET_RELEASES (set_code, set_name, release_date, total_cards) VALUES ('STH', 'Stronghold', 'March 2, 1998', 143);
 
 
 
