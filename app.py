@@ -39,11 +39,11 @@ def search():
     if sets: sets = sets.split(',')
 
 
-    print(colors)
-    print(keywords)
-    print(types)
-    print(subtypes)
-    print(sets)
+    #print(colors)
+    #print(keywords)
+    #print(types)
+    #print(subtypes)
+    #print(sets)
 
 
 
@@ -107,8 +107,8 @@ def search_database(search_term,colors,keywords,types,subtypes,sets):
 
     # Execute the query
     cursor.execute(query, parameters)
-    print(query)
-    print(parameters)
+    #print(query)
+    #print(parameters)
     results = cursor.fetchall()
 
     # Close the connection

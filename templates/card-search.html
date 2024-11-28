@@ -109,8 +109,8 @@
     .color-btn {
         background: none;
         border: 2px solid transparent;
-        width: 50px; /* Set fixed width */
-        height: 50px; /* Set fixed height */
+        width: 45px; /* Set fixed width */
+        height: 45px; /* Set fixed height */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -120,8 +120,8 @@
     }
 
     .color-btn img {
-        width: 45px; 
-        height: 45px;
+        width: 40px; 
+        height: 40px;
         border-radius: 50%;
     }
 
@@ -196,6 +196,9 @@
 			<button class="color-btn" color="green">
 			<img src="/static/color-symbols/green-symbol.webp" alt="Green" />
 			</button>
+            <button class="color-btn" color="colorless">
+                <img src="/static/color-symbols/colorless-symbol.webp" alt="Green" />
+            </button>
 		</div><br>
 
 
@@ -469,6 +472,22 @@
 			.map(button => button.getAttribute('set'));
 
             alert("Filters saved successfully!")
+
+            // Filter the files based on the search words
+            const queryParams = new URLSearchParams({
+                colors: activeColors.join(','), 
+                keywords: activeKeywords.join(','), 
+                types: activeTypes.join(','), 
+                subtypes: [...selectedSubtypes].join(','), 
+                sets: activeSets.join(',')
+            });
+            const response = await fetch(`/api/search?${queryParams.toString()}`);
+			responseFiles = await response.json();
+
+			const filteredFiles = responseFiles.map(tuple => tuple[0]);
+			// Display filtered cards
+			displayCards(filteredFiles);
+
     	});
         
 
@@ -494,6 +513,7 @@
             activeSets = [];
             
             alert("Successfully reset filters!")
+            displayCards(files);
     	});
 
 
@@ -502,24 +522,22 @@
 		searchInput.addEventListener('input', async () => {
             const searchText = searchInput.value.toLowerCase();
 
-			if (searchText === "") displayCards(files);
-			else{
-				// Filter the files based on the search words
-                const queryParams = new URLSearchParams({
-                    term: searchText,
-                    colors: activeColors.join(','), 
-                    keywords: activeKeywords.join(','), 
-                    types: activeTypes.join(','), 
-                    subtypes: [...selectedSubtypes].join(','), 
-                    sets: activeSets.join(',')
-                });
-                const response = await fetch(`/api/search?${queryParams.toString()}`);
-				responseFiles = await response.json();
+			// Filter the files based on the search words
+            const queryParams = new URLSearchParams({
+                term: searchText,
+                colors: activeColors.join(','), 
+                keywords: activeKeywords.join(','), 
+                types: activeTypes.join(','), 
+                subtypes: [...selectedSubtypes].join(','), 
+                sets: activeSets.join(',')
+            });
+            const response = await fetch(`/api/search?${queryParams.toString()}`);
+			responseFiles = await response.json();
 
-				const filteredFiles = responseFiles.map(tuple => tuple[0]);
-				// Display filtered cards
-				displayCards(filteredFiles);
-			}
+			const filteredFiles = responseFiles.map(tuple => tuple[0]);
+			// Display filtered cards
+			displayCards(filteredFiles);
+			
         });
 
 
