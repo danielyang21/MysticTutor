@@ -361,24 +361,7 @@
             cardGrid.innerHTML = 'Failed to load card images.';
         }
 
-
-        // Event listener to apply the search filter (THIS DOES NOT USE SQL)
-		/* const searchInput = document.getElementById('search');
-        searchInput.addEventListener('input', () => {
-            const searchText = searchInput.value.toLowerCase();
-            const searchWords = searchText.split(/\s+/); // Split by spaces
-
-			// Filter the files based on the search words
-			const filteredFiles = files.filter(file => {
-				return searchWords.every(word => file.toLowerCase().includes(word));
-			});
-
-            // Display filtered cards
-            displayCards(filteredFiles);
-        }); */
-
-	    
-		
+        
         //COLOURS
 		const colorButtons = document.querySelectorAll('.color-btn');
 		colorButtons.forEach(button => {
